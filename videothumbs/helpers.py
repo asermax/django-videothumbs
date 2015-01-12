@@ -168,8 +168,8 @@ class VideoThumbnailHelper(FieldFile):
             self.storage.save(url, data)
 
     def delete(self, save=True):
-        super(VideoThumbnailHelper, self).delete(save)
         path, full_filename = os.path.split(self.url)
+        super(VideoThumbnailHelper, self).delete(save)
         filename, extension = os.path.splitext(full_filename)
         path += "/thumbnail/"
 
